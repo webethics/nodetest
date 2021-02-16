@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "ed128b60-05da-4a40-9d73-af416467e03b",
+		"name": "NodejsAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "LoginAPI",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \n    \"email\":\"test@gmail.com\",\n    \"password\":\"Test@123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5005/api/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5005",
+					"path": [
+						"api",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RegisterAPI",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJyYWplc2giLCJpYXQiOjE2MTIzNTM1MTd9.FjBy-I01ZJ44kGscJ9D5kG6h65WHtDL4LKBvvmd8mGo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJyYWplc2giLCJpYXQiOjE2MTIzNTM1MTd9.FjBy-I01ZJ44kGscJ9D5kG6h65WHtDL4LKBvvmd8mGo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"rajesh\",\n    \"email\":\"test2@gmail.com\",\n    \"password\":\"Test@123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}{{PORT}}/api/users",
+					"host": [
+						"{{BASE_URL}}{{PORT}}"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllUsers",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJyYWplc2giLCJpYXQiOjE2MTIzNTM1MTd9.FjBy-I01ZJ44kGscJ9D5kG6h65WHtDL4LKBvvmd8mGo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BASE_URL}}{{PORT}}/api/users",
+					"host": [
+						"{{BASE_URL}}{{PORT}}"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SendLinkToResetPassword",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}{{PORT}}/api/users/reset_password/test@gmail.com",
+					"host": [
+						"{{BASE_URL}}{{PORT}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"reset_password",
+						"test@gmail.com"
+					]
+				},
+				"description": "send link to email for reset password "
+			},
+			"response": []
+		},
+		{
+			"name": "RessetPassword",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"password\":\"test@1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}{{PORT}}/api/users/receive_new_password/1/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjEyMzU4ODc3LCJleHAiOjE2MTIzNjI0Nzd9.1A9xFOZ9uX3rlPfbK7VHLF8Hb1uTXaUw6FvaB3lH2bA",
+					"host": [
+						"{{BASE_URL}}{{PORT}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"receive_new_password",
+						"1",
+						"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjEyMzU4ODc3LCJleHAiOjE2MTIzNjI0Nzd9.1A9xFOZ9uX3rlPfbK7VHLF8Hb1uTXaUw6FvaB3lH2bA"
+					]
+				},
+				"description": "http://localhost:5006/api/users/reset_password_received/1/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjEyMzU4ODc3LCJleHAiOjE2MTIzNjI0Nzd9.1A9xFOZ9uX3rlPfbK7VHLF8Hb1uTXaUw6FvaB3lH2bA"
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "Teamwebethics3!",
+    "database": "nodedb",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "",
+    "password": "",
+    "database": "",
+    "host": "",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "",
+    "password": "",
+    "database": "",
+    "host": "",
+    "dialect": "mysql"
+  }
+}
